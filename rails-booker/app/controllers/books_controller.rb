@@ -4,12 +4,16 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    book_counter =  Book.count(:id)
+    @number_book = book_counter = nil? ? 'Empty Value' :book_counter.to_s
+
     @books = Book.all
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+  @book = Book.friendly.find(params[:id])
   end
 
   # GET /books/new
@@ -28,7 +32,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to @book, notice: 'Libro fue creado con exito.' }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.html { redirect_to @book, notice: 'Libro fue actualizado con exito.' }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
@@ -56,7 +60,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+      format.html { redirect_to books_url, notice: 'Libro fue eliminado con exito.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +68,7 @@ class BooksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.find(params[:id])
+      @book = Book.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

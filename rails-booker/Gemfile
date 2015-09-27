@@ -4,6 +4,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.3.20'
+
+# Use Friendly ID to great URLS
+gem 'friendly_id', '~> 5.1.0'
+#Bootstrap SAAS great CSS
+gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'autoprefixer-rails'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

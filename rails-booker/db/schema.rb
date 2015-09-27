@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926173237) do
+ActiveRecord::Schema.define(version: 20150926225929) do
 
   create_table "books", force: :cascade do |t|
     t.string   "tittle",      limit: 255
     t.string   "author",      limit: 255
     t.text     "description", limit: 65535
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.decimal  "score",                     precision: 10
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "slug",        limit: 255
   end
+
+  add_index "books", ["slug"], name: "index_books_on_slug", unique: true, using: :btree
 
 end

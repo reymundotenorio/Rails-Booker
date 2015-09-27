@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
+
+//FOR BOOTSTRAP-SASS
+
+//= require bootstrap-sprockets
+
+
+//REQUIRE TREE DEBE SER LO ULTIMO
 //= require_tree .
