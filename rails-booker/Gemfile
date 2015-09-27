@@ -11,6 +11,15 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'autoprefixer-rails'
 
+#Paginacion
+gem 'will_paginate', '~> 3.0.7'
+
+#Paginacion con boostrap mejorado
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+
+#Paginacion con boostrap
+#gem 'bootstrap-will_paginate', '~> 0.0.10'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

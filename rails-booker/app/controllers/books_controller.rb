@@ -7,13 +7,13 @@ class BooksController < ApplicationController
     book_counter =  Book.count(:id)
     @number_book = book_counter = nil? ? 'Empty Value' :book_counter.to_s
 
-    @books = Book.all
+    @books = Book.all.paginate(page: params[:page], per_page: 3)
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
-  @book = Book.friendly.find(params[:id])
+  #@book = Book.friendly.find(params[:id])
   end
 
   # GET /books/new
