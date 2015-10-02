@@ -10,16 +10,29 @@ friendly_id :slug_candidates, use: :slugged
   def slug_candidates
     [
       :tittle,
-      [:tittle, :author]
-    #,
-    #  [:name, :street, :city],
-    #  [:name, :street_number, :street, :city]
+      [:tittle, :author],
+      [:tittle, :author, :description]
     ]
+  end
+
+  def should_generate_new_friendly_id?
+  slug.blank? || tittle_changed? || author_changed? || description_changed?
   end
 
   #def tittle_and_author
   #  "#{tittle} by #{author}"
 #end
+
+def self.search(search)
+
+if search
+  where("author LIKE ? OR tittle LIKE ?", "%#{search}%", "%#{search}%")
+else
+ scoped
+end
+# where("tittle LIKE ?", "%#{search}%")
+
+end
 
 
 end

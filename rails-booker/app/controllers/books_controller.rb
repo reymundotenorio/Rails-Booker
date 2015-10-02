@@ -4,16 +4,26 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+
     book_counter =  Book.count(:id)
     @number_book = book_counter = nil? ? 'Empty Value' :book_counter.to_s
+    @titulo = "Reymundo Tenorio"
 
-    @books = Book.all.paginate(page: params[:page], per_page: 3)
+    @books = Book.all.paginate(page: params[:page], per_page: 5)
+
+
+       if params[:search]
+         @books = Book.search(params[:search]).order("created_at ASC").paginate(page: params[:page], per_page: 5)
+       else
+         @books = Book.all.order('created_at ASC').paginate(page: params[:page], per_page: 5)
+       end
+
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
-  #@book = Book.friendly.find(params[:id])
+#  @book = Book.friendly.find(params[:id])
   end
 
   # GET /books/new
@@ -68,7 +78,17 @@ class BooksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
+
+      begin
       @book = Book.friendly.find(params[:id])
+     rescue
+      render_404
+     end
+     
+    end
+
+    def render_404
+      render file:"#{Rails.root}/public/404.html", layout: false, status:404
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
