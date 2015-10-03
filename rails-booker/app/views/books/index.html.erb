@@ -8,12 +8,12 @@
   <p><h4 id="notice"><%= notice %></h4></p>
   </div>
 
-<h1 style="text-align:center; margin-bottom:20px;">Lista de Libros</h1>
+<h1 style="text-align:center; margin-bottom:20px;"><%= t('book.show_book') %></h1>
 
 
   <%= form_tag(books_path, :method => "get", :id => "books_search", class:"navbar-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Buscar titulo o autor", class:"form-control", style:"width:90%" %>
-  <%= submit_tag "Buscar", class:"btn btn-info"%>
+  <%= text_field_tag :search, params[:search], placeholder: t('book.search_t_a'), class:"form-control", style:"width:90%" %>
+  <%= submit_tag t('book.search'), class:"btn btn-info"%>
   <% end %>
 
 

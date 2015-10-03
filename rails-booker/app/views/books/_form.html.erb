@@ -13,27 +13,27 @@
 
 <div class="form-group">
   <div class="field">
-    <%= f.label :"Titulo", class:"col-sm-2 control-label" %><br>
-    <%= f.text_field :tittle, class:"form-control", placeholder:"Introducir titulo"%>
+    <%= f.label t('book.title'), class:"col-sm-2 control-label" %><br>
+    <%= f.text_field :tittle, class:"form-control", placeholder:t('book.ph_title')%>
   </div>
 </div>
 
 <div class="form-group">
   <div class="field">
-    <%= f.label :"Autor", class:"col-sm-2 control-label" %><br>
-    <%= f.text_field :author, class:"form-control", placeholder:"Introducir autor" %>
+    <%= f.label t('book.author'), class:"col-sm-2 control-label" %><br>
+    <%= f.text_field :author, class:"form-control", placeholder:t('book.ph_author') %>
   </div>
   </div>
 
   <div class="form-group">
   <div class="field">
-    <%= f.label :"Descripcion", class:"col-sm-2 control-label" %><br>
-    <%= f.text_area :description, class:"form-control", placeholder:"Introducir descripcion"%>
+    <%= f.label  t('book.description'), class:"col-sm-2 control-label" %><br>
+    <%= f.text_area :description, class:"form-control", placeholder:t('book.ph_description')%>
   </div>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Guardar libro', class: 'btn btn-success' %>
+    <%= f.submit t(:save), class: 'btn btn-success' %>
   </div>
 
 <% end %>

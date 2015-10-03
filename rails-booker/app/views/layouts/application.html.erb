@@ -55,12 +55,18 @@
             <li><a href="#">Editar perfil</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Cerrar sesion</a></li>
+
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+</div>
 
 <div style="margin-top: 80px;">
 <%= yield %>

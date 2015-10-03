@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 
-
 //FOR BOOTSTRAP-SASS
 
 //= require bootstrap-sprockets
@@ -29,4 +28,15 @@ $(function() {
   return false;
 //  alert("hola");
   });
+
+
+$("#new_book").validate({
+debug: true,
+rules: {
+"book[tittle]": {required: true, tittle: true},
+"book[author]": {required: true},
+"book[description]": {required: true} //equalTo: "#user_password" , minlength: 6
+}
+});
+
 });

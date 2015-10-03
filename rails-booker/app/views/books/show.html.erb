@@ -1,5 +1,6 @@
 
 
+<% provide(:title, "Booker - #{@book.tittle}") %>
 
 <div style="margin: 20px; width:60%;">
 
@@ -10,7 +11,7 @@
 
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h3 class="panel-title">Titulo</h3>
+      <h3 class="panel-title"><%= t('book.title') %></h3>
     </div>
     <div class="panel-body">
         <%= @book.tittle %>
@@ -19,7 +20,7 @@
 
   <div class="panel panel-success">
     <div class="panel-heading">
-      <h3 class="panel-title">Autor</h3>
+      <h3 class="panel-title"><%= t('book.author') %></h3>
     </div>
     <div class="panel-body">
         <%= @book.author %>
@@ -29,7 +30,7 @@
 
   <div class="panel panel-warning">
     <div class="panel-heading">
-      <h3 class="panel-title">Descripcion</h3>
+      <h3 class="panel-title"><%= t('book.description') %></h3>
     </div>
     <div class="panel-body">
         <%= @book.description %>
@@ -38,7 +39,7 @@
 
 
 
-<%= link_to 'Editar', edit_book_path(@book), class:"btn btn-success", style:"color:#FFFFFF;" %> |
-<%= link_to 'Atras', books_path, class:"btn btn-info", style:"color:#FFFFFF;" %>
+<%= link_to t('book.edit'), edit_book_path(@book), class:"btn btn-success", style:"color:#FFFFFF;" %> |
+<%= link_to t('book.back'), books_path, class:"btn btn-info", style:"color:#FFFFFF;" %>
 
 </div>
