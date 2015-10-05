@@ -30,13 +30,4 @@ $(function() {
   });
 
 
-$("#new_book").validate({
-debug: true,
-rules: {
-"book[tittle]": {required: true, tittle: true},
-"book[author]": {required: true},
-"book[description]": {required: true} //equalTo: "#user_password" , minlength: 6
-}
-});
-
 });
