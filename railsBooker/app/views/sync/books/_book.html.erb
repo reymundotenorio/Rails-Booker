@@ -1,0 +1,13 @@
+
+
+
+
+  <tr>
+    <td><%= book.tittle %></td>
+    <td><%= book.author %></td>
+    <td><%= book.description %></td>
+    <td><%= link_to t('book.show'), book, class:"btn btn-primary", style:"color:#FFFFFF;", title:t('book.show')%></td>
+    <td><%= link_to t('book.edit'), edit_book_path(book), class:"btn btn-warning", style:"color:#FFFFFF;", title:t('book.edit') %></td>
+    <td><%= link_to t('book.delete'), book, class:"btn btn-danger", style:"color:#FFFFFF;", title:t('book.delete'),
+    method: :delete, remote: true, data: { confirm: t('book.sure') } %></td>
+  </tr>
